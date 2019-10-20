@@ -11,7 +11,11 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.inputmethod.EditorInfo;
+import android.widget.EditText;
 import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import java.util.Random;
 
@@ -56,11 +60,47 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    Random r = new Random();
+    public int number = r.nextInt(7);
+    public int number1;
+    public int number2;
+
     public void on_butoon_click(View view){
         TextView tv = this.findViewById(R.id.numberTextView);
-        Random r = new Random();
-        int number = r.nextInt(6);
+        if (number == 0)
+        {
+            number1 = r.nextInt(7);
+            tv.setText(Integer.toString(number1));
+        }
+        else
+        {
+            number2 = r.nextInt(7);
+            tv.setText(Integer.toString(number2));
+        }
+        inputnumbers();
+    }
 
-        tv.setText(Integer.toString(number));
+    public void inputnumbers(){
+        EditText et = (EditText)findViewById(R.id.editText);
+        int input = Integer.parseInt(et.getText().toString());
+
+        TextView tv = this.findViewById(R.id.InputTextView);
+
+        if(input == number1)
+        {
+            String result = "Congratulations!";
+            tv.setText(result);
+        }
+        else if(input == number2)
+        {
+            String result = "Congratulations!";
+            tv.setText(result);
+        }
+        else
+        {
+            String result = "Unfortunately";
+            tv.setText(result);
+        }
+
     }
 }
