@@ -20,7 +20,6 @@ import org.w3c.dom.Text;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
     public int number = r.nextInt(7);
     public int number1;
     public int number2;
+    public int time=0;
 
     public void on_butoon_click(View view){
         TextView tv = this.findViewById(R.id.numberTextView);
@@ -77,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
             number2 = r.nextInt(7);
             tv.setText(Integer.toString(number2));
         }
+
         inputnumbers();
     }
 
@@ -90,17 +91,25 @@ public class MainActivity extends AppCompatActivity {
         {
             String result = "Congratulations!";
             tv.setText(result);
+            times();
         }
         else if(input == number2)
         {
             String result = "Congratulations!";
             tv.setText(result);
+            times();
         }
         else
         {
             String result = "Unfortunately";
             tv.setText(result);
         }
+    }
 
+    public void times(){
+        TextView tv = this.findViewById(R.id.TimesView2);
+        time=time+1;
+        String result = String.valueOf(time);
+        tv.setText(result);
     }
 }
