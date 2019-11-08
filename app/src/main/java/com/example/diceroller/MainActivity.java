@@ -60,13 +60,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     Random r = new Random();
-    public int number = r.nextInt(6);
     public int number1;
     public int number2;
     public int time=0;
 
     public void on_butoon_click(View view){
         TextView tv = this.findViewById(R.id.numberTextView);
+        int number = r.nextInt(6);
         if (number == 0)
         {
             number1 = 6;
@@ -74,7 +74,8 @@ public class MainActivity extends AppCompatActivity {
         }
         else
         {
-            tv.setText(Integer.toString(number));
+            number1 = number;
+            tv.setText(Integer.toString(number1));
         }
 
         inputnumbers();
@@ -88,9 +89,7 @@ public class MainActivity extends AppCompatActivity {
         String text4 ="If you won a million dollars, what is the first thing you would buy?";
         String text5 ="If you could spaned the day with one fictional character, who would it be?";
         String text6 ="If you found a magic lantern and a genie gave you three wishes, what would you wish?";
-        if (number == 0)
-        {
-            number1 = r.nextInt(7);
+            number1 = r.nextInt(6);
             if (number1 ==1)
             {
             tv.setText(text1);
@@ -111,39 +110,10 @@ public class MainActivity extends AppCompatActivity {
             {
                 tv.setText(text5);
             }
-            if (number1 ==6)
+            if (number1 ==0)
             {
                 tv.setText(text6);
             }
-        }
-        else
-        {
-            number2 = r.nextInt(7);
-            if (number2 ==1)
-            {
-                tv.setText(text1);
-            }
-            if (number2 ==2)
-            {
-                tv.setText(text2);
-            }
-            if (number2 ==3)
-            {
-                tv.setText(text3);
-            }
-            if (number2 ==4)
-            {
-                tv.setText(text4);
-            }
-            if (number2 ==5)
-            {
-                tv.setText(text5);
-            }
-            if (number2 ==6)
-            {
-                tv.setText(text6);
-            }
-        }
     }
 
     public void inputnumbers(){
