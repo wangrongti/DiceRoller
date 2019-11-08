@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     Random r = new Random();
-    public int number = r.nextInt(7);
+    public int number = r.nextInt(6);
     public int number1;
     public int number2;
     public int time=0;
@@ -69,13 +69,12 @@ public class MainActivity extends AppCompatActivity {
         TextView tv = this.findViewById(R.id.numberTextView);
         if (number == 0)
         {
-            number1 = r.nextInt(7);
+            number1 = 6;
             tv.setText(Integer.toString(number1));
         }
         else
         {
-            number2 = r.nextInt(7);
-            tv.setText(Integer.toString(number2));
+            tv.setText(Integer.toString(number));
         }
 
         inputnumbers();
