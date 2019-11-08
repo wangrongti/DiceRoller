@@ -81,6 +81,72 @@ public class MainActivity extends AppCompatActivity {
         inputnumbers();
     }
 
+    public void on_butoon_click2(View view){
+        TextView tv = this.findViewById(R.id.numberTextView);
+        String text1 ="If you could go anywhere in the world, where would you go?";
+        String text2 ="If you were stranded on a desert island, what three things would you want to take with you?";
+        String text3 ="If you could eat only one food for the rest of your life, what would that be?";
+        String text4 ="If you won a million dollars, what is the first thing you would buy?";
+        String text5 ="If you could spaned the day with one fictional character, who would it be?";
+        String text6 ="If you found a magic lantern and a genie gave you three wishes, what would you wish?";
+        if (number == 0)
+        {
+            number1 = r.nextInt(7);
+            if (number1 ==1)
+            {
+            tv.setText(text1);
+            }
+            if (number1 ==2)
+            {
+                tv.setText(text2);
+            }
+            if (number1 ==3)
+            {
+                tv.setText(text3);
+            }
+            if (number1 ==4)
+            {
+                tv.setText(text4);
+            }
+            if (number1 ==5)
+            {
+                tv.setText(text5);
+            }
+            if (number1 ==6)
+            {
+                tv.setText(text6);
+            }
+        }
+        else
+        {
+            number2 = r.nextInt(7);
+            if (number2 ==1)
+            {
+                tv.setText(text1);
+            }
+            if (number2 ==2)
+            {
+                tv.setText(text2);
+            }
+            if (number2 ==3)
+            {
+                tv.setText(text3);
+            }
+            if (number2 ==4)
+            {
+                tv.setText(text4);
+            }
+            if (number2 ==5)
+            {
+                tv.setText(text5);
+            }
+            if (number2 ==6)
+            {
+                tv.setText(text6);
+            }
+        }
+    }
+
     public void inputnumbers(){
         EditText et = (EditText)findViewById(R.id.editText);
         int input = Integer.parseInt(et.getText().toString());
